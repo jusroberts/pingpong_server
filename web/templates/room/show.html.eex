@@ -1,0 +1,52 @@
+<div class='page-header'>
+  <h2><span id='room-id'><%= @room.id %></span>: <%= @room.name %></h1>
+</div>
+<div class='container text-center'>
+  <div class='col-xs-6'>
+    <div class='panel panel-default'>
+      <div class='panel-heading'>
+        <h2 class='panel-title'>TEAM A</h2>
+      </div>
+      <div class='panel-body'>
+        <h1><span id='team-a-score'><%= @team_a_show_score %></span></h1>
+      </div>
+    </div>
+  </div>
+  <div class='col-xs-6'>
+    <div class='panel panel-default'>
+      <div class='panel-heading'>
+        <h2 class='panel-title'>TEAM B</h2>
+      </div>
+      <div class='panel-body'>
+        <h1><span id='team-b-score'><%= @team_b_show_score %></span></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul>
+
+  <li>
+    <strong>Client token:</strong>
+    <%= @room.client_token %>
+  </li>
+
+  <li>
+    <strong>Team a score:</strong>
+    <%= @room.team_a_score %>
+  </li>
+
+  <li>
+    <strong>Team b score:</strong>
+    <%= @room.team_b_score %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @room.name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: room_path(@conn, :edit, @room) %>
+<%= link "Back", to: room_path(@conn, :index) %>
