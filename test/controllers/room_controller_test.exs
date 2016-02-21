@@ -63,4 +63,9 @@ defmodule PingpongServer.RoomControllerTest do
     assert redirected_to(conn) == room_path(conn, :index)
     refute Repo.get(Room, room.id)
   end
+
+  test "increment team a", %{conn: conn} do
+    room = Repo.insert! %Room{}
+    conn = get conn, room_path(conn, :increment, room)
+  end
 end
