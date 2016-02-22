@@ -8,7 +8,7 @@
         <h2 class='panel-title'>TEAM A</h2>
       </div>
       <div class='panel-body'>
-        <h1><span id='team-a-score'><%= @team_a_show_score %></span></h1>
+        <h1 id='team-a-score'><%= @team_a_show_score %></h1>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
         <h2 class='panel-title'>TEAM B</h2>
       </div>
       <div class='panel-body'>
-        <h1><span id='team-b-score'><%= @team_b_show_score %></span></h1>
+        <h1 id='team-b-score'><%= @team_b_show_score %></h1>
       </div>
     </div>
   </div>

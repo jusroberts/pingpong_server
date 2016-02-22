@@ -18,4 +18,26 @@ import "phoenix_html"
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
+$('#team-a-score').change(function() {
+  changePanelColor($('#team-a-score'))
+  changePanelColor($('#team-b-score'))
+});
+$('#team-b-score').change(function() {
+  changePanelColor($('#team-a-score'))
+  changePanelColor($('#team-b-score'))
+});
+
+var changePanelColor = function(score) {
+  var panel = score.parent().parent()
+  var body = score.text()
+  var allClasses = 'panel-default panel-danger panel-success'
+  if (body === "W") {
+    panel.removeClass(allClasses).addClass('panel-success')
+  } else if (body === "L") {
+    panel.removeClass(allClasses).addClass('panel-danger')
+  } else {
+    panel.removeClass(allClasses).addClass('panel-default')
+  }
+}
+
 import socket from "./socket"
