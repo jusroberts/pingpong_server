@@ -19,12 +19,10 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 $('#team-a-score').change(function() {
-  changePanelColor($('#team-a-score'))
-  changePanelColor($('#team-b-score'))
+  updateBothPanelColors()
 });
 $('#team-b-score').change(function() {
-  changePanelColor($('#team-a-score'))
-  changePanelColor($('#team-b-score'))
+  updateBothPanelColors()
 });
 
 var changePanelColor = function(score) {
@@ -39,5 +37,13 @@ var changePanelColor = function(score) {
     panel.removeClass(allClasses).addClass('panel-default')
   }
 }
+
+var updateBothPanelColors = function() {
+  changePanelColor($('#team-a-score'))
+  changePanelColor($('#team-b-score'))
+}
+
+updateBothPanelColors()
+
 
 import socket from "./socket"
