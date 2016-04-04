@@ -1,0 +1,23 @@
+.page-header
+  %h2
+    %span#room-id
+      = @room.id
+    = ": #{@room.name}"
+.container.text-center
+  .col-xs-6
+    .panel.panel-default
+      .panel-heading
+        %h2.panel-title TEAM A
+      .panel-body
+        %h1#team-a-score= @team_a_show_score
+  .col-xs-6
+    .panel.panel-default
+      .panel-heading
+        %h2.panel-title TEAM B
+      .panel-body
+        %h1#team-b-score= @team_b_show_score
+= link "Edit", to: room_path(@conn, :edit, @room)
+= link "Back", to: room_path(@conn, :index)
+
+:javascript
+  require("web/static/js/app").RoomShow.run()

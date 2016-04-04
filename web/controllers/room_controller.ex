@@ -12,11 +12,11 @@ defmodule PingpongServer.RoomController do
 
     key = "team_#{team}_score"
     team_score = Map.fetch!(room, :"#{key}") + 1
-    cond do
+    params = cond do
       PingpongServer.GameLogicLib.game_over?(room.team_a_score, room.team_b_score) ->
-        params = %{team_a_score: 0, team_b_score: 0}
+        %{team_a_score: 0, team_b_score: 0}
       true ->
-        params = %{key => team_score}
+        %{key => team_score}
     end
     changeset = Room.changeset(room, params)
 
