@@ -72,4 +72,24 @@ form.link, form.button {
 .sf {
   font-family: 'street fighter';
   font-weight: normal;
+  color: black;
+   -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: maroon;
+}
+
+h1.sf {
+  font-size: 7em;
+}
+
+h2.sf {
+  font-size: 2em;
+}
+.panel-heading {
+  background-color: #B1B1B1;
+}
+.panel {
+  background-color: gray;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }
