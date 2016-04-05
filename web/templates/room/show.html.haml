@@ -6,15 +6,15 @@
   .col-xs-6
     .panel.panel-default
       .panel-heading
-        %h2.panel-title TEAM A
+        %h2.panel-title.sf TEAM A
       .panel-body
-        %h1#team-a-score= @team_a_show_score
+        %h1#team-a-score.sf= @team_a_show_score
   .col-xs-6
     .panel.panel-default
       .panel-heading
-        %h2.panel-title TEAM B
+        %h2.panel-title.sf TEAM B
       .panel-body
-        %h1#team-b-score= @team_b_show_score
+        %h1#team-b-score.sf= @team_b_show_score
 = link "Edit", to: room_path(@conn, :edit, @room)
 = link "Back", to: room_path(@conn, :index)
 
