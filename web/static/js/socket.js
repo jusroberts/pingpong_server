@@ -16,14 +16,18 @@ let teamAScore = $("#team-a-score")
 let teamBScore = $("#team-b-score")
 
 channel.on("team_a_score", payload => {
+  console.log("a")
+  console.log(payload)
   teamAScore.text(`${payload.body}`)
   teamAScore.change()
 })
 channel.on("team_b_score", payload => {
+  console.log("b")
+  console.log(payload)
   teamBScore.text(`${payload.body}`)
   teamBScore.change()
 })
-
+console.log("room id: ", roomId)
 channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })

@@ -1,7 +1,6 @@
 .page-header
   %h2
-    %span#room-id
-      = @room.id
+    %span#room-id= @room.id
     = ": #{@room.name}"
 .container.text-center
   .col-xs-6
@@ -20,4 +19,6 @@
 = link "Back", to: room_path(@conn, :index)
 
 :javascript
-  require("web/static/js/app").RoomShow.run()
+  $(document).ready(function() {
+    require("web/static/js/room/show").RoomShow.run()
+  });

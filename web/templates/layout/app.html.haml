@@ -10,9 +10,8 @@
     %title Pinging the Pong
     %link(rel="stylesheet" href='#{static_path(@conn, "/css/app.css")}')
 
+  %script(src='//code.jquery.com/jquery-1.11.3.min.js')
   %body
-    %script(src='//code.jquery.com/jquery-1.11.3.min.js')
-    %script(src='#{static_path(@conn, "/js/app.js")}')
     .container
 
       %p.alert.alert-info(role="alert")= get_flash(@conn, :info)
@@ -20,3 +19,6 @@
 
       %main(role="main")
         = render @view_module, @view_template, assigns
+
+
+    %script(src='#{static_path(@conn, "/js/app.js")}')
